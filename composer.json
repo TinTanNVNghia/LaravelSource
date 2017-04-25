@@ -42,6 +42,7 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan key:generate",
             "touch database/database.sqlite",
@@ -52,6 +53,7 @@
             "php artisan optimize"
         ],
         "post-update-cmd": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan key:generate",
             "touch database/database.sqlite",
