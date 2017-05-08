@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Test Jwt Auth */
+Route::group(['middleware' => ['jwt.auth']],function (){
+    Route::get('/api/product',function (){
+        return 'Hello World!';
+    });
+});
